@@ -1,10 +1,14 @@
 FROM mcr.microsoft.com/devcontainers/python:3.11
 
-# 1) 시스템 패키지 (ffmpeg + LaTeX + manim이 쓰는 라이브러리)
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
         ffmpeg \
-        texlive-full \
+        texlive-latex-recommended \
+        texlive-latex-extra \
+        texlive-fonts-recommended \
+        texlive-pictures \
+        texlive-pstricks \
+        texlive-publishers \
         libcairo2 \
         libpango-1.0-0 \
         libpangoft2-1.0-0 \
